@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
+// Reprendre à 2h 06min pour le front-end
+
 }

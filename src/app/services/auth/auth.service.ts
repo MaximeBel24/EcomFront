@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { UserStorageService } from '../storage/user-storage.service';
 
-const BASIC_URL = "http://localhost:8080/";
+const BASIC_URL = "http://localhost:8081/";
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,7 @@ export class AuthService {
     return this.http.post(BASIC_URL+"sign-up", signupRequest)
   }
 
-  login(username:string, password:string): any {
+  login(username:string, password:string): Observable<boolean> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     const body = {username, password};
 

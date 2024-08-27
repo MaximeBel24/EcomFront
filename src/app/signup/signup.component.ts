@@ -12,6 +12,7 @@ import { AuthService } from '../services/auth/auth.service';
 export class SignupComponent {
   signupForm!: FormGroup;
   hidePassword = true;
+  hideConfirmPassword = true;
 
   constructor(
     private fb: FormBuilder,
@@ -31,6 +32,10 @@ export class SignupComponent {
 
   togglePasswordVisibility() {
     this.hidePassword = !this.hidePassword;
+  }
+
+  toggleConfirmPasswordVisibility() {
+    this.hideConfirmPassword = !this.hideConfirmPassword;
   }
 
   onSubmit(): void {

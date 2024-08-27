@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { error } from 'node:console';
 
 @Component({
   selector: 'app-login',
@@ -34,6 +33,8 @@ export class LoginComponent {
     this.hidePassword = !this.hidePassword;
   }
 
+  // fix : 1h 14min
+
   onSubmit(): void {
     const username = this.loginForm.get('email')!.value;
     const password = this.loginForm.get('password')!.value;
@@ -51,5 +52,5 @@ export class LoginComponent {
         });
       }
     );
-  }
+  } 
 }

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { UserStorageService } from '../services/storage/user-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -41,10 +42,11 @@ export class LoginComponent {
 
     this.authService.login(username, password).subscribe(
       (res) =>{
-        this.snackBar.open('Connexion réussie', 'OK', {
-          duration: 5000
-        });
-        this.router.navigate(['/']);
+        if (UserStorageService.isAdminLoggedIn()){
+          this.router.navigateByUrl('/admin/dashboard');
+        }else if (UserStorageService.isCustomerLoggedIn()){
+          this.router.navigateByUrl('/customer/dashboard');
+        }
       },
       (error) => {
         this.snackBar.open('Nom d\'utilisateur ou mot de passe invalide', 'ERREUR', {

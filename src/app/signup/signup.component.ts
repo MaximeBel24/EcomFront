@@ -43,7 +43,7 @@ export class SignupComponent {
     const confirmPassword = this.signupForm.get('confirmPassword')?.value;
 
     if (password !== confirmPassword) {
-      this.snackBar.open('Passwords do not match.', 'Close', {
+      this.snackBar.open('Les mots de passe en correspondent pas.', 'Close', {
         duration: 5000,
         panelClass: 'error-snackbar',
       });
@@ -52,11 +52,11 @@ export class SignupComponent {
 
     this.authService.register(this.signupForm.value).subscribe(
       (response) => {
-        this.snackBar.open('Sign up successful!', 'Close', { duration: 5000 });
+        this.snackBar.open('Inscription réussie!', 'Close', { duration: 5000 });
         this.router.navigateByUrl('/login');
       },
       (error) => {
-        this.snackBar.open('Sign up failed. Please try again.', 'Close', {
+        this.snackBar.open('L\'inscription à échouée. Veuillez réessayer', 'Close', {
           duration: 5000,
           panelClass: 'error-snackbar',
         });

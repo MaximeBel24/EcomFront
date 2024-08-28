@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
     this.adminService.getAllProducts().pipe(
       catchError(error => {
         console.error('Error fetching products:', error);
-        return of([]); // Return an empty array if there's an error
+        return of([]); 
       })
     ).subscribe(res => {
       res.forEach((element: { processedImg: string; byteImg: string; }) => {

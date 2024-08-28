@@ -38,8 +38,8 @@ export class DashboardComponent {
 
   submitForm(){
     this.products = [];
-    const name = this.searchProductForm.get('title')!.value;
-    this.adminService.getAllProducts().subscribe(res => {
+    const title = this.searchProductForm.get('title')!.value;
+    this.adminService.getAllProductsByName(title).subscribe(res => {
       res.forEach((element: { processedImg: string; byteImg: string; }) => {
         element.processedImg = 'data:image/jpeg;base64,' + element.byteImg;
         this.products.push(element);

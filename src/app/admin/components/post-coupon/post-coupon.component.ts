@@ -42,7 +42,7 @@ export class PostCouponComponent {
           this.snackBar.open('Bon de réduction ajouté avec succès', 'Fermer', {
             duration: 5000,
           });
-          this.router.navigate(['/admin/dashboard']);
+          this.router.navigate(['/admin/coupons']);
         } else {
           this.snackBar.open('Erreur lors de l\'ajout du bon de réduction', 'Fermer', {
             duration: 5000,

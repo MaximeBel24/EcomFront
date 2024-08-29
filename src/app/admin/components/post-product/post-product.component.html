@@ -24,7 +24,7 @@
                     {{ category.name }}
                 </mat-option>
             </mat-select>
-            <mat-error *ngIf="productForm.get('categoryId')?.hasError('required')">
+            <mat-error *ngIf="productForm.get('categoryId')!.hasError('required')">
                 Veuillez choisir une catégorie.
             </mat-error>
         </mat-form-field>
@@ -32,7 +32,7 @@
         <mat-form-field appearance="outline" class="form-field">
             <mat-label>Nom du produit</mat-label>
             <input matInput type="text" formControlName="name" placeholder="Nom du produit">
-            <mat-error *ngIf="productForm.get('name')?.hasError('required')">
+            <mat-error *ngIf="productForm.get('name')!.hasError('required')">
                 Veuillez entrer un nom de produit.
             </mat-error>
         </mat-form-field>
@@ -40,7 +40,7 @@
         <mat-form-field appearance="outline" class="form-field">
             <mat-label>Prix du produit</mat-label>
             <input matInput type="number" formControlName="price" placeholder="Prix du produit">
-            <mat-error *ngIf="productForm.get('price')?.hasError('required')">
+            <mat-error *ngIf="productForm.get('price')!.hasError('required')">
                 Veuillez entrer un prix.
             </mat-error>
         </mat-form-field>
@@ -48,7 +48,7 @@
         <mat-form-field appearance="outline" class="form-field">
             <mat-label>Description du produit</mat-label>
             <textarea matInput type="text" formControlName="description" placeholder="Description du produit"></textarea>
-            <mat-error *ngIf="productForm.get('description')?.hasError('required')">
+            <mat-error *ngIf="productForm.get('description')!.hasError('required')">
                 Veuillez entrer une description.
             </mat-error>
         </mat-form-field>

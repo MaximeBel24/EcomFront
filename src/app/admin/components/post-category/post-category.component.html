@@ -6,7 +6,7 @@
         <mat-form-field appearance="outline" class="form-field">
             <mat-label>Nom de la catégorie</mat-label>
             <input matInput type="text" formControlName="name" placeholder="Nom de la catégorie" required>
-            <mat-error *ngIf="categoryForm.get('name')?.hasError('required')">
+            <mat-error *ngIf="categoryForm.get('name')!.hasError('required')">
                 Veuillez entrer un nom de catégorie valide...
             </mat-error>
         </mat-form-field>
@@ -14,7 +14,7 @@
         <mat-form-field appearance="outline" class="form-field">
             <mat-label>Description de la catégorie</mat-label>
             <textarea matInput type="text" formControlName="description" placeholder="Description de la catégorie" required></textarea>
-            <mat-error *ngIf="categoryForm.get('description')?.hasError('required')">
+            <mat-error *ngIf="categoryForm.get('description')!.hasError('required')">
                 Veuillez entrer une description de catégorie valide...
             </mat-error>
         </mat-form-field>

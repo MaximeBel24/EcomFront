@@ -11,14 +11,14 @@
                             {{ item.productName }}
                         </div>
                         <div class="item-price">
-                            {{ item.price | currency}}
+                            Prix : {{ item.price }}€
                         </div>
                         <div class="quantity-controls">
                             <button mat-icon-button [disabled]="item.quantity == 1" (click)="decreaseQuantity(item.productId)">
                                 <mat-icon>remove_circle_outline</mat-icon>
                             </button>
                             <span class="quantity">
-                                {{ item.quantity }}
+                                Quantité : {{ item.quantity }}
                             </span>
                             <button mat-icon-button (click)="increaseQuantity(item.productId)">
                                 <mat-icon>add_circle_outline</mat-icon>
@@ -30,13 +30,16 @@
             </div>
         </div>
         <div class="total-price">
-            Montant total : {{ order.totalAmount | currency }}
+            Montant total : {{ order.totalAmount }}€
         </div> 
         <div class="total-price" *ngIf="order.couponName != null ">
             Bon de réduction: {{ order.couponName }}
         </div>
+        <!-- <div class="total-price" *ngIf="order.couponDiscount != null">
+            Réduction : {{ order.couponDiscount }}%
+        </div>         -->
         <div class="total-price">
-            Montant final: {{ order.amount | currency }}
+            Montant final: {{ order.amount }}€
         </div> 
  
         <div>

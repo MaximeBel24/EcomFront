@@ -35,7 +35,7 @@
 
             <mat-divider></mat-divider>
             <div class="actions">
-                <button mat-raised-button color="primary" class="update-button" [routerLink]="'/admin/faq/' + product.id">FAQ</button>
+                <button mat-raised-button color="primary" [routerLink]="'/admin/faq/' + product.id">FAQ</button>
                 <button mat-raised-button color="accent" class="update-button" [routerLink]="'/admin/product/' + product.id">Editer</button>
                 <button mat-raised-button color="warn" class="delete-button" (click)="deleteProduct(product.id)">Supprimer</button>
             </div>

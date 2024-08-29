@@ -1,6 +1,6 @@
 <div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn">
   <mat-toolbar color="primary" class="navbar">
-    <span class="navbar-brand">E-commerce</span>
+    <span class="navbar-brand">NomadOdyssey</span>
     <span class="spacer"></span>
     <button mat-button routerLink="/order" routerLinkActive="active">Commande</button>
     <button mat-button routerLink="/signup" routerLinkActive="active">Inscription</button>
@@ -10,14 +10,14 @@
 
 <div *ngIf="isAdminLoggedIn">
   <mat-toolbar color="primary" class="navbar">
-    <span class="navbar-brand">E-commerce</span>
+    <span class="navbar-brand">NomadOdyssey</span>
     <span class="spacer"></span>
     <button mat-button routerLink="/admin/dashboard" routerLinkActive="active">Tableaude Bord</button>
     <button mat-button routerLink="/admin/analytics" routerLinkActive="active">Analyse</button>
     <button mat-button routerLink="/admin/category" routerLinkActive="active">Catégorie</button>
     <button mat-button routerLink="/admin/product" routerLinkActive="active">Produit</button>
     <button mat-button routerLink="/admin/orders" routerLinkActive="active">Commandes</button>
-    <button mat-button routerLink="/admin/post-coupon" routerLinkActive="active">Bon de réduction</button>
+    <button mat-button routerLink="/admin/post-coupon" routerLinkActive="active">Bons de réduction</button>
     <button mat-button routerLink="/admin/coupons" routerLinkActive="active">Liste de bon</button>
     <button mat-button (click)="logout()" routerLinkActive="active">Déconnexion</button>
   </mat-toolbar>
@@ -25,9 +25,9 @@
 
 <div *ngIf="isCustomerLoggedIn">
   <mat-toolbar color="primary" class="navbar">
-    <span class="navbar-brand">E-commerce</span>
+    <span class="navbar-brand">NomadOdyssey</span>
     <span class="spacer"></span>
-    <button mat-button routerLink="/customer/dashboard" routerLinkActive="active">Tableaude Bord</button>
+    <button mat-button routerLink="/customer/dashboard" routerLinkActive="active">Produits</button>
     <button mat-button routerLink="/customer/cart" routerLinkActive="active">Panier</button>
     <button mat-button routerLink="/customer/my_orders" routerLinkActive="active">Commandes</button>
     <button mat-button routerLink="/customer/wishlist" routerLinkActive="active">Liste de souhait</button>

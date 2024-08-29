@@ -40,7 +40,6 @@ export class DashboardComponent implements OnInit {
         element.processedImg = 'data:image/jpeg;base64,' + element.byteImg;
         this.products.push(element);
       });
-      console.log(this.products);
     });
   }    
 
@@ -50,14 +49,13 @@ export class DashboardComponent implements OnInit {
     this.adminService.getAllProductsByName(title).pipe(
       catchError(error => {
         console.error('Error fetching products by name:', error);
-        return of([]); // Return an empty array if there's an error
+        return of([]);
       })
     ).subscribe(res => {
       res.forEach((element: { processedImg: string; byteImg: string; }) => {
         element.processedImg = 'data:image/jpeg;base64,' + element.byteImg;
         this.products.push(element);
       });
-      console.log(this.products);
     });
   }
 

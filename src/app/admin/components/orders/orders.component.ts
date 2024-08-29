@@ -26,4 +26,20 @@ export class OrdersComponent {
     })
   }
 
+  changeOrderStatus(orderId: number, status: string){
+    this.adminService.changeOrderStatus(orderId, status).subscribe(res => {
+      if(res.id != null){
+        this.snackBar.open('Statut de la commande modifié avec succès', 'Fermer', {
+          duration: 5000
+        });
+        this.getPlacedOrders();
+      } else {
+        this.snackBar.open('Erreur lors de la modification du statut de la commande', 'Fermer', {
+          duration: 5000,
+          panelClass: 'error-snackbar'
+        });
+      }
+    })
+  }
+
 }

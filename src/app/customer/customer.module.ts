@@ -8,13 +8,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from '../angular-material-module';
 import { provideHttpClient } from '@angular/common/http';
 import { CartComponent } from './components/cart/cart.component';
+import { PlaceOrderComponent } from './components/place-order/place-order.component';
 
 
 @NgModule({
   declarations: [
     CustomerComponent,
     DashboardComponent,
-    CartComponent
+    CartComponent,
+    PlaceOrderComponent
   ],
   imports: [
     CommonModule,

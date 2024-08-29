@@ -9,9 +9,11 @@ import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { AngularMaterialModule } from '../angular-material-module';
 import { PostCategoryComponent } from './components/post-category/post-category.component';
 import { PostProductComponent } from './components/post-product/post-product.component';
+import { PostCouponComponent } from './components/post-coupon/post-coupon.component';
+import { CouponsComponent } from './components/coupons/coupons.component';
 
 @NgModule({
-  declarations: [AdminComponent, DashboardComponent, PostCategoryComponent, PostProductComponent],
+  declarations: [AdminComponent, DashboardComponent, PostCategoryComponent, PostProductComponent, PostCouponComponent, CouponsComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

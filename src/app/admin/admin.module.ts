@@ -13,9 +13,10 @@ import { PostCouponComponent } from './components/post-coupon/post-coupon.compon
 import { CouponsComponent } from './components/coupons/coupons.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { PostProductFaqComponent } from './components/post-product-faq/post-product-faq.component';
+import { UpdateProductComponent } from './components/update-product/update-product.component';
 
 @NgModule({
-  declarations: [AdminComponent, DashboardComponent, PostCategoryComponent, PostProductComponent, PostCouponComponent, CouponsComponent, OrdersComponent, PostProductFaqComponent],
+  declarations: [AdminComponent, DashboardComponent, PostCategoryComponent, PostProductComponent, PostCouponComponent, CouponsComponent, OrdersComponent, PostProductFaqComponent, UpdateProductComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

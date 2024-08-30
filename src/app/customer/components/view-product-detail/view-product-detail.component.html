@@ -1,0 +1,58 @@
+<div class="center-container" *ngIf="product">
+    <div class="product-card">
+        <div class="product-image">
+            <img [src]="product.processedImg" alt="{{ product.name }} Image">
+        </div>
+        <div class="product-details">
+            <h2>{{ product.name }}</h2>
+            <p class="description">
+                {{ product.description }}
+            </p>
+            <p class="price">
+                Prix: {{ product.price }}€
+            </p>
+            <p class="category">
+                Catégorie: {{ product.categoryName }}
+                <mat-icon class="heart-icon" (click)="addToWishlist()">
+                    favorite_border
+                </mat-icon>
+            </p>
+        </div>
+    </div>
+</div>
+
+<h1 class="section-heading" *ngIf="reviews.length > 0">Avis client</h1>
+<div class="review-list">
+    <div class="center-container">
+        <div class="review-card" *ngFor="let review of reviews">
+            <div class="review-header">
+                <div class="review-rating">
+                    <mat-icon *ngFor="let i of [1, 2, 3, 4, 5]" [ngClass]="{'filled': i <= review.rating}">star</mat-icon>
+                </div>
+                <div class="review-date">
+                    {{ review.createdAt | date: 'dd/MM/yyyy' }}
+                </div>
+            </div>
+            <div class="review-description">
+                {{ review.description }}
+            </div>
+            <div class="review-image" *ngIf="review.image">
+                <img [src]="review.image" alt="Review Image">
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 class="section-heading" *ngIf="reviews.length > 0">Foire aux Questions</h1>
+<div class="faq-list" *ngIf="FAQS">
+    <div class="center-container">
+        <div class="faq-card" *ngFor="let faq of FAQS">
+            <div class="faq-details">
+                <p class="question">Question:</p>
+                <p class="question-text">{{ faq.question }}</p>
+                <p class="answer">Réponse:</p>
+                <p class="answer-text">{{ faq.answer }}</p>
+            </div>
+        </div>
+    </div>
+</div>

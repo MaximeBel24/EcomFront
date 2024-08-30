@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,7 +19,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     private customerService: CustomerService,
     private fb: FormBuilder,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -26,6 +28,10 @@ export class DashboardComponent implements OnInit {
     this.searchProductForm = this.fb.group({
       title: [null, [Validators.required]]
     });
+  }
+
+  viewDetails(productId: number): void {
+    this.router.navigate([`/customer/product/${productId}`]);
   }
 
   getAllProducts() {

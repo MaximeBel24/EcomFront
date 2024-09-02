@@ -1,3 +1,15 @@
+section {
+    padding-block: 5rem 1rem;
+}
+
+hr {
+    margin: 10px 120px;
+    border: 0;
+    height: 1px;
+    background-color: rgb(122,202,147); /* Change la couleur ici */
+}
+
+
 .container {
     max-width: 1220px;
     margin-inline: 1.5rem;
@@ -6,10 +18,6 @@
 .grid {
     display: grid;
     gap: 1.5rem;
-}
-
-section {
-    padding-block: 5rem 1rem;
 }
 
 .home {
@@ -69,8 +77,75 @@ section {
     text-decoration: none;
 }
 
+
 .button:hover {
     box-shadow: 0 6px 32px 0 rgb(122,202,147);
+}
+
+/*=============== SERVICES ===============*/
+.services__container{
+    row-gap: 3rem;
+  }
+  
+  .services__card{
+    text-align: center;
+  }
+  
+  .services__card i{
+    display: block;
+    font-size: 3rem;
+    color: rgb(122,202,147);
+    margin-bottom: 1rem;
+
+  }
+  
+  .services__title{
+    font-family: "Dancing Script", cursive;
+
+    margin-bottom: .5rem;
+    font-size: 2rem;
+    color: rgb(34, 49, 63);
+  }
+
+  .services__description {
+    color: rgb(80, 80, 80);
+  }
+
+  /*=============== ABOUT ===============*/
+.about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+.about__data {
+    max-width: 540px;
+}
+
+.about__title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: rgb(34, 49, 63);
+    margin-bottom: 1rem;
+    font-family: "Dancing Script", cursive;
+}
+
+.about__description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: rgb(80, 80, 80);
+}
+
+.about__img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+.about__img:hover {
+    transform: scale(1.05);
 }
 
 
@@ -93,6 +168,22 @@ section {
         width: 420px;
         justify-self: center;
     }
+
+    .services__container{
+        grid-template-columns: repeat(3, max-content);
+        justify-content: center;
+        column-gap: 5rem;
+      }
+
+      .about__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about__img {
+        margin-inline: auto;
+        margin-bottom: 2rem;
+    }
 }
 
 @media screen and (min-width: 1150px){
@@ -106,7 +197,15 @@ section {
     }
      .home-description {
         margin-bottom: 50px;
-     }
+    }
+
+    .services__container{
+        column-gap: 10rem;
+      }
+
+    .services__card i{
+    font-size: 3.5rem;
+    }
 }
 
 @media screen and (min-width: 1220px){
@@ -128,5 +227,18 @@ section {
     .home_article,
     .home_img {
         width: 290px;
+    }
+
+    .about__container {
+        display: flex;
+        gap: 80px;
+    }
+
+    .about__title {
+        font-size: 3rem;
+    }
+
+    .about__description {
+        font-size: 1.4rem;
     }
 }

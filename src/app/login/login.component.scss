@@ -10,7 +10,6 @@ mat-card {
   max-width: 400px;
   width: 100%;
   padding: 20px;
-  background-color: rgb(122,202,147);
 
   @media screen and (max-width: 500px) {
     max-width: 90%;
@@ -18,10 +17,11 @@ mat-card {
 }
 
 mat-card-title {
+  color:  rgb(82, 158, 106);
+  font-weight: bold;
   text-align: center;
   font-size: 24px;
   margin-bottom: 20px;
-  color: rgb(80,58,48);
 }
 
 form {
@@ -43,20 +43,39 @@ mat-form-field {
 
 button {
   width: 100%;
+  color:  rgb(82, 158, 106);
 }
 
+.button {
+  padding: 1rem 1.5rem;
+  display: inline;
+  background-color: rgb(122,202,147);
+  color: rgb(80,58,48);
+  font-weight: 600;
+  transition: box-shadow 0.4s;
+  border: none;
+  text-decoration: none;
+}
+
+.button:hover {
+  box-shadow: 0 6px 32px 0 rgb(122,202,147);
+}
+
+
 mat-card-actions {
-    
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   p{
       a{
-        margin-left: 5px;
+         margin-left: 5px;
           text-decoration: none;
-          color: rgb(80,58,48);
+          color:  rgb(82, 158, 106);
+          font-weight: 500;
       }
 
       a:hover{
           text-decoration: underline;
-          color: rgb(44, 32, 26);
       }
   }
 }

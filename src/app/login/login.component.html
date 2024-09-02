@@ -24,14 +24,16 @@
                     </mat-error>
                 </mat-form-field>
 
-                <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid" (click)="onSubmit()">
+                <button color="primary" type="submit" [disabled]="loginForm.invalid" (click)="onSubmit()" class="button">
                     Se connecter
                 </button>
             </form>
         </mat-card-content>
 
         <mat-card-actions>
-            <p>Vous n'avez pas de compte ? <a routerLink="/signup">Inscrivez-vous</a></p>          
+            <p>Vous n'avez pas de compte ? <a routerLink="/signup">Inscrivez-vous</a></p>        
+            <p><a routerLink="">Mot de passe oublié ?</a></p>     
         </mat-card-actions>
+
     </mat-card>
 </div>

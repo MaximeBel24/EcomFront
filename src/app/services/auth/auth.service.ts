@@ -2,8 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { UserStorageService } from '../storage/user-storage.service';
+import { environment } from '../../../environments/environment';
 
-const BASIC_URL = "http://localhost:8081/";
+const BASIC_URL = environment.NOMAD_ODYSSEY_API_URL;
 
 @Injectable({
   providedIn: 'root'

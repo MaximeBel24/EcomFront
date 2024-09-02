@@ -2,13 +2,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
+    background-image: url(../../assets/images/home.jpg);
 }
 
 mat-card {
     max-width: 400px;
     width: 100%;
     padding: 20px;
+    background-color: rgb(122,202,147);
 
     @media screen and (max-width: 500px) {
         max-width: 90%;
@@ -16,6 +18,7 @@ mat-card {
 }
 
 mat-card-title {
+    color: rgb(80,58,48);
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
@@ -25,15 +28,37 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 
 mat-form-field {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    background-color: #ffffff;
+    border-radius: 4px;
+
+    mat-label, mat-error {
+        margin: 0;
+    }
 }
 
 button {
     width: 100%;
+}
+
+mat-card-actions {
+    
+    p{
+        a{
+            text-decoration: none;
+            color: rgb(80,58,48);
+        }
+
+        a:hover{
+            text-decoration: underline;
+            color: rgb(44, 32, 26);
+        }
+    }
 }
 
 @media screen and (max-width: 500px) {

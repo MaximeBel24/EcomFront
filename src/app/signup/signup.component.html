@@ -6,10 +6,19 @@
             <form [formGroup]="signupForm">
 
                 <mat-form-field appearance="outline">
-                    <mat-label>Nom d'utilisateur</mat-label>
-                    <input matInput formControlName="name" placeholder="Nom d'utilisateur" required>
+                    <mat-label>Prénom</mat-label>
+                    <input matInput formControlName="firstName" placeholder="Prénom" required>
 
-                    <mat-error *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched">
+                    <mat-error *ngIf="signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched">
+                        Veuillez entrer un prénom valide.
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Nom</mat-label>
+                    <input matInput formControlName="lastName" placeholder="Nom" required>
+
+                    <mat-error *ngIf="signupForm.get('lastName')?.invalid && signupForm.get('lastName')?.touched">
                         Veuillez entrer un nom valide.
                     </mat-error>
                 </mat-form-field>
@@ -53,7 +62,7 @@
         </mat-card-content>
 
         <mat-card-actions>
-            <p>Vous avez déja un compte ? <a mat-button color="accent" routerLink="/login">Connectez-vous</a></p>          
+            <p>Vous avez déja un compte ? <a routerLink="/login">Connectez-vous</a></p>          
         </mat-card-actions>
     </mat-card>
 </div>

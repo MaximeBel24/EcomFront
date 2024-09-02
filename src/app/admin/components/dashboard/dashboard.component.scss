@@ -7,9 +7,10 @@
   .search-input{
     width: 500px;
     margin-right: 15px;
+    border-radius: 8px;
 
-    input {
-        padding-right: 40px;
+    input::placeholder {
+      color: white;
     }
 
     button {
@@ -26,7 +27,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: #f8f8f8;
+    // background-color: #f8f8f8;
     min-height: 55vh;
     padding: 40px;
 

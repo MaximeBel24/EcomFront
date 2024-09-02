@@ -1,0 +1,132 @@
+.container {
+    max-width: 1220px;
+    margin-inline: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+section {
+    padding-block: 5rem 1rem;
+}
+
+.home {
+    background-image: url(../../assets/images/home.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+}
+
+.home_swiper {
+    margin: initial;
+}
+
+.home_container {
+    padding-top: 7 rem;
+    row-gap: 2rem;
+}
+
+.home_data {
+    text-align: center;
+}
+
+.home_title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: rgb(167, 224, 185);
+    font-family: "Dancing Script", cursive;
+}
+
+.home-description {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    color: rgb(167, 224, 185);
+}
+
+.home_images {
+    display: grid;
+}
+
+.home_article,
+.home_img {
+    width: 220px;
+    transition: scale 0.4s;
+}
+
+.home_article{
+    scale: 0.8;
+}
+
+.button {
+    padding: 1rem 1.5rem;
+    display: inline;
+    background-color: rgb(122,202,147);
+    color: rgb(80,58,48);
+    font-weight: 600;
+    transition: box-shadow 0.4s;
+    text-decoration: none;
+}
+
+.button:hover {
+    box-shadow: 0 6px 32px 0 rgb(122,202,147);
+}
+
+
+  /*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+@media screen and (max-width: 320px) {
+    .container {
+        margin-inline: 1rem;
+    }
+}
+
+@media screen and (min-width: 768px){
+    
+    .home_container{
+        grid-template-columns: 580px;
+    }
+
+    .home_data {
+        width: 420px;
+        justify-self: center;
+    }
+}
+
+@media screen and (min-width: 1150px){
+
+    .home_data {
+        width: initial;
+    }
+
+    .home_title {
+        margin-top: 150px;
+    }
+     .home-description {
+        margin-bottom: 50px;
+     }
+}
+
+@media screen and (min-width: 1220px){
+
+    .container{
+      margin-inline: auto;
+    }
+
+    .home_container {
+        grid-template-columns: 435px 745px;
+        align-items: center;
+        padding-block: 7rem 2rem;
+    }
+
+    .home_data {
+        text-align: initial;
+    }
+
+    .home_article,
+    .home_img {
+        width: 290px;
+    }
+}

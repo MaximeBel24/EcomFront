@@ -1,7 +1,3 @@
-section {
-    padding-block: 5rem 1rem;
-}
-
 hr {
     margin: 10px 120px;
     border: 0;
@@ -25,6 +21,7 @@ hr {
     background-size: cover;
     background-position: center;
     height: 90vh;
+    box-shadow: 0 13px 8px rgba(0, 0, 0, 0.1);
 }
 
 .home_swiper {
@@ -84,7 +81,7 @@ hr {
 
 /*=============== SERVICES ===============*/
 .services__container{
-    row-gap: 3rem;
+    padding: 50px;
   }
   
   .services__card{
@@ -101,7 +98,6 @@ hr {
   
   .services__title{
     font-family: "Dancing Script", cursive;
-
     margin-bottom: .5rem;
     font-size: 2rem;
     color: rgb(34, 49, 63);
@@ -113,7 +109,8 @@ hr {
 
   /*=============== ABOUT ===============*/
 .about__container {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: space-evenly;
     align-items: center;
     gap: 2rem;
 }
@@ -156,6 +153,51 @@ hr {
     .container {
         margin-inline: 1rem;
     }
+
+    .home_title {
+        font-size: 2.5rem;
+    }
+
+    .home_description {
+        font-size: 1.2rem;
+    }
+
+    .home_images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home_article,
+    .home_img {
+        width: 150px;
+    }
+
+    .about__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about__title {
+        font-size: 2rem;
+    }
+
+    .about__description {
+        font-size: 1rem;
+    }
+
+    .about__img {
+        margin-inline: auto;
+        margin-bottom: 2rem;
+    }
+
+    .services__container{
+        grid-template-columns: repeat(2, max-content);
+        justify-content: center;
+        column-gap: 2rem;
+      }
+
+      .services__card i{
+        font-size: 2.5rem;
+      }
 }
 
 @media screen and (min-width: 768px){
@@ -184,6 +226,20 @@ hr {
         margin-inline: auto;
         margin-bottom: 2rem;
     }
+
+    .about__title {
+        font-size: 2.5rem;
+    }
+
+    .about__description {
+        font-size: 1rem;
+    }
+
+    .services__card i{
+        font-size: 3rem;
+    }
+
+
 }
 
 @media screen and (min-width: 1150px){
@@ -205,6 +261,40 @@ hr {
 
     .services__card i{
     font-size: 3.5rem;
+    }
+
+    .about__container {
+        grid-template-columns: 1fr 1fr;
+        text-align: initial;
+    }
+
+    .about__img {
+        margin-inline: initial;
+        margin-bottom: initial;
+    }
+
+    .about__title {
+        font-size: 3rem;
+    }
+
+    .about__description {
+        font-size: 1.4rem;
+    }
+
+    .services__card i{
+        font-size: 4rem;
+    }
+
+    .services__title{
+        font-size: 2.5rem;
+    }
+
+    .services__description {
+        font-size: 1.2rem;
+    }
+
+    .services__card i{
+    font-size: 4rem;
     }
 }
 
@@ -241,4 +331,17 @@ hr {
     .about__description {
         font-size: 1.4rem;
     }
+
+    .about__img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease;
+    }
+
+    .about__img:hover {
+        transform: scale(1.05);
+    }
+
+    
 }

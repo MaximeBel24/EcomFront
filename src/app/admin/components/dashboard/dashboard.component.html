@@ -1,44 +1,46 @@
-<form [formGroup]="searchProductForm" class="search-form" (submit)="submitForm()">
-    <mat-form-field class="search-input" appearance="outline">
-        <mat-label>Rechercher un produit</mat-label>
-        <input matInput formControlName="title">
+<div class="container">
 
-        <button mat-button matSuffix type="submit" color="primary" [disabled]="searchProductForm.invalid">
-            <mat-icon>search</mat-icon>
-        </button>
-    </mat-form-field>
+    <mat-card>
+        <mat-card-content>
+            <table mat-table [dataSource]="products" class="mat-elevation-z8">
+                
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef>ID</th>
+                    <td mat-cell *matCellDef="let product">{{ product.id }}</td>
+                </ng-container>
 
-</form>
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef>Nom</th>
+                    <td mat-cell *matCellDef="let product">{{ product.name }}</td>
+                </ng-container>
 
-<div class="product-list">
+                <ng-container matColumnDef="description">
+                    <th mat-header-cell *matHeaderCellDef>Description</th>
+                    <td mat-cell *matCellDef="let product">{{ product.description }}</td>
+                </ng-container>
 
-    <mat-card class="product-card" *ngFor="let product of products">
-        <div class="product-image">
-            <img [src]="product.processedImg" alt="product.name">
-        </div>
-        <div class="product-details">
-            <h2 class="product-name">{{ product.name }}</h2>
-            <p class="product-description">{{ product.description }}</p>
+                <ng-container matColumnDef="price">
+                    <th mat-header-cell *matHeaderCellDef>Prix</th>
+                    <td mat-cell *matCellDef="let product">{{ product.price }}€</td>
+                </ng-container>
 
-            <mat-divider></mat-divider>
+                <ng-container matColumnDef="category">
+                    <th mat-header-cell *matHeaderCellDef>Catégorie</th>
+                    <td mat-cell *matCellDef="let product">{{ product.categoryName }}</td>
+                </ng-container>
 
-            <div class="product-info">
-                <div class="info-row">
-                    <span class="info-label">Prix :</span>
-                    <span class="info-value">{{ product.price }}€</span>
-                </div>
-                <div class="info-row">
-                    <span class="info-label">Catégorie :</span>
-                    <span class="info-value">{{ product.categoryName }}</span>
-                </div>
-            </div>
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef>Actions</th>
+                    <td mat-cell *matCellDef="let product">
+                        <a [routerLink]="'/admin/faq/' + product.id"><i class="ri-question-line"></i></a>
+                        <a [routerLink]="'/admin/product/' + product.id"><i class="ri-edit-2-fill"></i></a>
+                        <a (click)="deleteProduct(product.id)"><i class="ri-delete-bin-fill"></i></a>
+                    </td>
+                </ng-container>
 
-            <mat-divider></mat-divider>
-            <div class="actions">
-                <button mat-raised-button color="primary" [routerLink]="'/admin/faq/' + product.id">FAQ</button>
-                <button mat-raised-button color="accent" class="update-button" [routerLink]="'/admin/product/' + product.id">Editer</button>
-                <button mat-raised-button color="warn" class="delete-button" (click)="deleteProduct(product.id)">Supprimer</button>
-            </div>
-        </div>
+                <tr mat-header-row *matHeaderRowDef="['id', 'name', 'description', 'price', 'category', 'actions']"></tr>
+                <tr mat-row *matRowDef="let row; columns: ['id', 'name', 'description', 'price', 'category', 'actions']"></tr>
+            </table>
+        </mat-card-content>
     </mat-card>
 </div>

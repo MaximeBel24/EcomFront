@@ -12,9 +12,12 @@
 </div>
 
 <div *ngIf="isAdminLoggedIn" class="navbar">
-    <div class="navbar-brand"><a routerLink="">NomadOdyssey</a></div>
+    <div class="navbar-brand">
+        <a routerLink=""><img src="../../assets/images/logo.png" alt="" class="logo"></a>
+        <a routerLink="">NomadOdyssey</a>
+    </div>
     <ul>
-        <li><a class="nav-link" routerLink="/admin/dashboard" routerLinkActive="active">Tableau de Bord</a></li>
+        <li><a class="nav-link" routerLink="/admin/dashboard" routerLinkActive="active">Liste des produits</a></li>
         <li><a class="nav-link" routerLink="/admin/analytics" routerLinkActive="active">Analyse</a></li>
         <li><a class="nav-link" routerLink="/admin/category" routerLinkActive="active">Catégorie</a></li>
         <li><a class="nav-link" routerLink="/admin/product" routerLinkActive="active">Produit</a></li>
@@ -26,7 +29,10 @@
 </div>
 
 <div *ngIf="isCustomerLoggedIn" class="navbar">
-    <div class="navbar-brand"><a routerLink="">NomadOdyssey</a></div>
+    <div class="navbar-brand">
+        <a routerLink=""><img src="../../assets/images/logo.png" alt="" class="logo"></a>
+        <a routerLink="">NomadOdyssey</a>
+    </div>
     <ul>
         <li><a class="nav-link" routerLink="/customer/dashboard" routerLinkActive="active">Produits</a></li>
         <li><a class="nav-link" routerLink="/customer/cart" routerLinkActive="active">Panier</a></li>

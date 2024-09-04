@@ -1,13 +1,21 @@
+// order-by-status.component.scss
+
 .order-status-container {
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-image: url(../../../../../assets/images/home.jpg);
+
 }
 
 .order-status-card {
     width: 32%;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
+    background-color: rgba(185, 158, 123, 255);
+    border: 7px solid rgb(122,202,147);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     margin-right: 20px;
 }
 
@@ -17,12 +25,12 @@
 
 .order-status-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 16px 32px rgb(122,202,147);
 }
 
 .status-avatar {
-    background-color: #007bff;
-    color: #fff;
+    background-color: rgb(122,202,147);
+    color: rgb(80,58,48);
     font-size: 32px;
     border-radius: 50%;
     width: 60px;
@@ -35,12 +43,12 @@
 .mat-card-title {
     font-weight: bold;
     font-size: 20px;
-    color: #333;
+    color: rgb(34, 49, 63);
 }
 
 .status-value {
     font-size: 36px;
-    color: #007bff;
+    color: rgb(80,58,48);
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 20px;
 }

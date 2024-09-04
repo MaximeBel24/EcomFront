@@ -1,61 +1,65 @@
 <div class="container">
-    <h2>Ajouter un produit</h2>
+    <mat-card>
+        <mat-card-title>Ajouter un produit</mat-card-title>
 
-    <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+        <mat-card-content>
+            <form [formGroup]="productForm" (ngSubmit)="addProduct()">
 
-        <div class="file-upload-container">
-            <label class="file-upload-label">
-                <span>Choisir un fichier...</span>
-                <input type="file" id="fileInput" (change)="onFileSelected($event)" hidden>
-                <mat-icon>attach_file</mat-icon>
-            </label>
+                <div class="file-upload-container">
+                    <label class="button">
+                        <span>Choisir un fichier...</span>
+                        <input type="file" id="fileInput" (change)="onFileSelected($event)" hidden>
+                        <mat-icon>attach_file</mat-icon>
+                    </label>
 
-            <div *ngIf="selectedFile" class="image-preview">
-                <div class="circle-image">
-                    <img [src]="imagePreview" alt="Selected Image" class="preview-image">
+                    <div *ngIf="selectedFile" class="image-preview">
+                        <div class="circle-image">
+                            <img [src]="imagePreview" alt="Selected Image" class="preview-image">
+                        </div>
+                    </div>
+                    <mat-error *ngIf="!selectedFile">
+                        Veuillez choisir une image.
+                    </mat-error>
                 </div>
-            </div>
-            <mat-error *ngIf="!selectedFile">
-                Veuillez choisir une image.
-            </mat-error>
-        </div>
 
-        <mat-form-field appearance="outline" class="form-field">
-            <mat-label>Choisir une catégorie</mat-label>
-            <mat-select formControlName="categoryId" name="categoryId">
-                <mat-option *ngFor="let category of listOfCategories" [value]="category.id">
-                    {{ category.name }}
-                </mat-option>
-            </mat-select>
-            <mat-error *ngIf="productForm.get('categoryId')!.hasError('required') && productForm.get('categoryId')!.touched">
-                Veuillez choisir une catégorie.
-            </mat-error>
-        </mat-form-field>
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Choisir une catégorie</mat-label>
+                    <mat-select formControlName="categoryId" name="categoryId">
+                        <mat-option *ngFor="let category of listOfCategories" [value]="category.id">
+                            {{ category.name }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="productForm.get('categoryId')!.hasError('required') && productForm.get('categoryId')!.touched">
+                        Veuillez choisir une catégorie.
+                    </mat-error>
+                </mat-form-field>
 
-        <mat-form-field appearance="outline" class="form-field">
-            <mat-label>Nom du produit</mat-label>
-            <input matInput type="text" formControlName="name" placeholder="Nom du produit">
-            <mat-error *ngIf="productForm.get('name')!.hasError('required') && productForm.get('name')!.touched">
-                Veuillez entrer un nom de produit.
-            </mat-error>
-        </mat-form-field>
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Nom du produit</mat-label>
+                    <input matInput type="text" formControlName="name" placeholder="Nom du produit">
+                    <mat-error *ngIf="productForm.get('name')!.hasError('required') && productForm.get('name')!.touched">
+                        Veuillez entrer un nom de produit.
+                    </mat-error>
+                </mat-form-field>
 
-        <mat-form-field appearance="outline" class="form-field">
-            <mat-label>Prix du produit</mat-label>
-            <input matInput type="number" formControlName="price" placeholder="Prix du produit">
-            <mat-error *ngIf="productForm.get('price')!.hasError('required') && productForm.get('price')!.touched">
-                Veuillez entrer un prix.
-            </mat-error>
-        </mat-form-field>
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Prix du produit</mat-label>
+                    <input matInput type="number" formControlName="price" placeholder="Prix du produit">
+                    <mat-error *ngIf="productForm.get('price')!.hasError('required') && productForm.get('price')!.touched">
+                        Veuillez entrer un prix.
+                    </mat-error>
+                </mat-form-field>
 
-        <mat-form-field appearance="outline" class="form-field">
-            <mat-label>Description du produit</mat-label>
-            <textarea matInput type="text" formControlName="description" placeholder="Description du produit"></textarea>
-            <mat-error *ngIf="productForm.get('description')!.hasError('required') && productForm.get('description')!.touched">
-                Veuillez entrer une description.
-            </mat-error>
-        </mat-form-field>
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Description du produit</mat-label>
+                    <textarea matInput type="text" formControlName="description" placeholder="Description du produit"></textarea>
+                    <mat-error *ngIf="productForm.get('description')!.hasError('required') && productForm.get('description')!.touched">
+                        Veuillez entrer une description.
+                    </mat-error>
+                </mat-form-field>
 
-        <button mat-raised-button color="primary" type="submit">Ajouter</button>
-    </form>
+                <button class="button" type="submit">Ajouter</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
 </div>

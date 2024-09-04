@@ -73,4 +73,18 @@ export class CartComponent {
   placeOrder(){
     this.dialog.open(PlaceOrderComponent);
   }
+
+  ngAfterViewInit() {
+    this.adjustContainerPadding();
+  }
+
+  adjustContainerPadding() {
+    const navbar = document.querySelector('.navbar') as HTMLElement;
+    const container = document.querySelector('.container') as HTMLElement;
+
+    if (navbar && container) {
+      const navbarHeight = navbar.offsetHeight;
+      container.style.paddingTop = `${navbarHeight}px`;
+    }
+  }
 }

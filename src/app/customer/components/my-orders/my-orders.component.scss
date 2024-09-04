@@ -1,29 +1,38 @@
-.bold-cell{
+.bold-cell {
     font-weight: bold;
+    color: rgb(80,58,48);  /* Harmonisé avec les autres éléments */
 }
 
 .mat-elevation-z8 {
     width: 80%;
-    margin: 0;
-    border-radius: 8px;
+    margin: 20px auto;  /* Ajout d'une marge pour centrer et espacer */
+    border-radius: 10px;  /* Légèrement arrondi pour correspondre aux autres composants */
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  /* Harmonisé avec les autres ombres */
+    background-color: rgba(185, 158, 123, 255);  /* Couleur de fond harmonisée */
 }
 
 .mat-header-cell {
-    font-weight: bolder;
-    color: #003973;
-    background-color: #f0f0f0;
-    padding: 12px 16px;
+    font-weight: bold;
+    color: rgb(34, 49, 63);  /* Couleur de texte cohérente */
+    background-color: rgb(122,202,147);  /* Harmonisé avec la palette globale */
+    padding: 16px 20px;  /* Ajustement des padding pour plus de confort */
 }
 
 .mat-cell {
-    padding: 12px 16px;
-    border-bottom: 1px solid #f0f0f0;
+    padding: 16px 20px;  /* Ajustement des padding */
+    border-bottom: 1px solid rgba(122,202,147, 0.5);  /* Bordure plus subtile et cohérente */
+    color: rgb(80,58,48);  /* Couleur de texte harmonisée */
 }
 
 .mat-row:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: rgba(185, 158, 123, 0.8);  /* Alternance des couleurs de fond */
+}
+
+.mat-row:hover {
+    background-color: rgb(122,202,147);  /* Couleur de survol harmonisée */
+    color: white;  /* Texte blanc sur survol */
+    transition: background-color 0.3s ease;  /* Transition fluide pour le survol */
 }
 
 .spinner {
@@ -33,6 +42,6 @@
     height: 300px;
 }
 
-.mat-progress-spinner circle{
-    stroke: #003973;
+.mat-progress-spinner circle {
+    stroke: rgb(34, 49, 63);  /* Couleur de la progress spinner harmonisée */
 }

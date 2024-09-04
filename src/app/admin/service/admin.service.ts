@@ -69,6 +69,12 @@ export class AdminService {
       headers: this.createAuthorizationHeader()
     })
   }
+  
+  deleteCoupon(couponId: any): Observable<any> {
+    return this.http.delete(BASIC_URL + `api/admin/coupons/delete/${couponId}`, {
+      headers: this.createAuthorizationHeader()
+    })
+  }
 
   getPlacedOrders(): Observable<any> {
     return this.http.get(BASIC_URL + "api/admin/placedOrders", {

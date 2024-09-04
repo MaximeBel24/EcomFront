@@ -1,24 +1,28 @@
 <div class="container">
-    <h2>Ajouter une Catégorie</h2>
+    <mat-card>
+        <mat-card-title>Ajouter une Catégorie</mat-card-title>
 
-    <form [formGroup]="categoryForm" (ngSubmit)="addCategory()">
+        <mat-card-content>
+            <form [formGroup]="categoryForm" (ngSubmit)="addCategory()">
 
-        <mat-form-field appearance="outline" class="form-field">
-            <mat-label>Nom de la catégorie</mat-label>
-            <input matInput type="text" formControlName="name" placeholder="Nom de la catégorie" required>
-            <mat-error *ngIf="categoryForm.get('name')!.hasError('required')">
-                Veuillez entrer un nom de catégorie valide...
-            </mat-error>
-        </mat-form-field>
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Nom de la catégorie</mat-label>
+                    <input matInput type="text" formControlName="name" placeholder="Nom de la catégorie" required>
+                    <mat-error *ngIf="categoryForm.get('name')!.hasError('required')">
+                        Veuillez entrer un nom de catégorie valide...
+                    </mat-error>
+                </mat-form-field>
 
-        <mat-form-field appearance="outline" class="form-field">
-            <mat-label>Description de la catégorie</mat-label>
-            <textarea matInput type="text" formControlName="description" placeholder="Description de la catégorie" required></textarea>
-            <mat-error *ngIf="categoryForm.get('description')!.hasError('required')">
-                Veuillez entrer une description de catégorie valide...
-            </mat-error>
-        </mat-form-field>
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Description de la catégorie</mat-label>
+                    <textarea matInput type="text" formControlName="description" placeholder="Description de la catégorie" required></textarea>
+                    <mat-error *ngIf="categoryForm.get('description')!.hasError('required')">
+                        Veuillez entrer une description de catégorie valide...
+                    </mat-error>
+                </mat-form-field>
 
-        <button mat-raised-button color="primary" type="submit">Ajouter</button>
-    </form>
+                <button class="button" type="submit">Ajouter</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
 </div>

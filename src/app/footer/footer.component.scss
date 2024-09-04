@@ -53,6 +53,19 @@ ul {
 .footer_social{
     display: flex;
     column-gap: 1.25rem;
+    transition: color 0.3s;
+
+    .ri-facebook-circle-line:hover{
+        color: #3b5998;
+    }
+
+    .ri-instagram-line:hover{
+        color: #E1306C;
+    }
+
+    .ri-twitter-x-line:hover{
+        color: #657786;
+    }
 }
 
 .footer_social a{
@@ -61,10 +74,6 @@ ul {
     text-decoration: none;
 }
 
-.footer_social a:hover{
-    color: rgb(44, 32, 26);
-    text-decoration: underline;
-}
 
 .footer_copy {
     display: block;

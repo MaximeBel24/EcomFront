@@ -1,70 +1,71 @@
-<div *ngIf="cartItems.length > 0; else emptyCart">
-    <div class="cart-container">
-        <div class="cart-item" *ngFor="let item of cartItems">
-            <div class="product-info">
-                <div class="product-image">
-                    <img [src]="item.processedImg" alt="product-image">
-                </div>
-                <div class="product-details">
-                    <div class="item-row">
-                        <div class="item-name" [ngClass]="{ 'highlight' : item.highlighted }">
-                            {{ item.productName }}
-                        </div>
-                        <div class="item-price">
-                            Prix : {{ item.price }}€
-                        </div>
-                        <div class="quantity-controls">
-                            <button mat-icon-button [disabled]="item.quantity == 1" (click)="decreaseQuantity(item.productId)">
-                                <mat-icon>remove_circle_outline</mat-icon>
-                            </button>
-                            <span class="quantity">
-                                Quantité : {{ item.quantity }}
-                            </span>
-                            <button mat-icon-button (click)="increaseQuantity(item.productId)">
-                                <mat-icon>add_circle_outline</mat-icon>
-                            </button>
+<div class="container">
+    <div *ngIf="cartItems.length > 0; else emptyCart">
+        <div class="cart-container">
+            <div class="cart-item" *ngFor="let item of cartItems">
+                <div class="product-info">
+                    <div class="product-image">
+                        <img [src]="item.processedImg" alt="product-image">
+                    </div>
+                    <div class="product-details">
+                        <div class="item-row">
+                            <div class="item-name" [ngClass]="{ 'highlight' : item.highlighted }">
+                                {{ item.productName }}
+                            </div>
+                            <div class="item-price">
+                                Prix : {{ item.price }}€
+                            </div>
+                            <div class="quantity-controls">
+                                <button mat-icon-button [disabled]="item.quantity == 1" (click)="decreaseQuantity(item.productId)">
+                                    <mat-icon>remove_circle_outline</mat-icon>
+                                </button>
+                                <span class="quantity">
+                                    Quantité : {{ item.quantity }}
+                                </span>
+                                <button mat-icon-button (click)="increaseQuantity(item.productId)">
+                                    <mat-icon>add_circle_outline</mat-icon>
+                                </button>
+                            </div>
                         </div>
                     </div>
+    
                 </div>
-
+            </div>
+            <div class="total-price">
+                Montant total : {{ order.totalAmount }}€
+            </div> 
+            <div class="total-price" *ngIf="order.couponName != null ">
+                Bon de réduction: {{ order.couponName }}
+            </div>
+            <!-- <div class="total-price" *ngIf="order.couponDiscount != null">
+                Réduction : {{ order.couponDiscount }}%
+            </div>         -->
+            <div class="total-price">
+                Montant final: {{ order.amount }}€
+            </div> 
+     
+            <div>
+                <button mat-raised-button color="primary" (click)="placeOrder()">Passer commande</button>
             </div>
         </div>
-        <div class="total-price">
-            Montant total : {{ order.totalAmount }}€
-        </div> 
-        <div class="total-price" *ngIf="order.couponName != null ">
-            Bon de réduction: {{ order.couponName }}
-        </div>
-        <!-- <div class="total-price" *ngIf="order.couponDiscount != null">
-            Réduction : {{ order.couponDiscount }}%
-        </div>         -->
-        <div class="total-price">
-            Montant final: {{ order.amount }}€
-        </div> 
- 
-        <div>
-            <button mat-raised-button color="primary" (click)="placeOrder()">Passer commande</button>
+        <div class="container" *ngIf="order.couponName == null">
+            <form [formGroup]="couponForm" (ngSubmit)="applyCoupon()">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Code de réduction</mat-label>
+                    <input type="text" matInput placeholder="Code de réduction" formControlName="code">
+                    <mat-error *ngIf="couponForm.get('code')!.hasError('required')">
+                        Le code de réduction est obligatoire
+                    </mat-error>
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit">Appliquer</button>
+            </form>
         </div>
     </div>
-    <div class="container" *ngIf="order.couponName == null">
-        <form [formGroup]="couponForm" (ngSubmit)="applyCoupon()">
-            <mat-form-field appearance="outline" class="form-field">
-                <mat-label>Code de réduction</mat-label>
-                <input type="text" matInput placeholder="Code de réduction" formControlName="code">
-                <mat-error *ngIf="couponForm.get('code')!.hasError('required')">
-                    Le code de réduction est obligatoire
-                </mat-error>
-            </mat-form-field>
-            <button mat-raised-button color="primary" type="submit">Appliquer</button>
-        </form>
-    </div>
+
+    <ng-template #emptyCart>
+        <div class="empty-cart">
+            <mat-icon>remove_shopping_cart</mat-icon>
+            <h2>Votre panier est vide</h2>
+            <p>Vous n'avez pas encore ajouté de produits à votre panier</p>
+        </div>
+    </ng-template>
 </div>
-
-<ng-template #emptyCart>
-    <div class="empty-cart">
-        <mat-icon>remove_shopping_cart</mat-icon>
-        <h2>Votre panier est vide</h2>
-        <p>Vous n'avez pas encore ajouté de produits à votre panier</p>
-    </div>
-</ng-template>
-

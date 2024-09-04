@@ -4,50 +4,65 @@
     align-items: center;
     height: 100vh;
     background-image: url(../../assets/images/home.jpg);
-}
-
-mat-card {
+  }
+  
+  mat-card {
     max-width: 400px;
     width: 100%;
     padding: 20px;
-
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(185, 158, 123, 255);
+    border: 7px solid rgb(122,202,147);
+  
     @media screen and (max-width: 500px) {
-        max-width: 90%;
+      max-width: 90%;
     }
-}
-
-mat-card-title {
-    color:  rgb(82, 158, 106);
-    font-weight: bold;
+  
+    @media screen and (min-width: 1150px) {
+      max-width: 500px;
+    }
+  
+    &:hover {
+      transform: translateY(-10px); 
+      box-shadow: 0 16px 32px rgb(122,202,147);
+      
+    }
+  }
+  
+  mat-card-title {
+    color:  rgb(34, 49, 63);
+    font-weight: 700;
     text-align: center;
-    font-size: 24px;
+    font-size: 2.2rem;
     margin-bottom: 20px;
-}
-
-form{
+    font-family: "Dancing Script", cursive;
+  
+  }
+  
+  form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-}
-
-mat-form-field {
+  }
+  
+  mat-form-field {
     width: 100%;
-    margin-bottom: 0;
-    background-color: #ffffff;
+    margin-bottom: 20px;
     border-radius: 4px;
-
+    background-color: rgba(185, 158, 123, 255);
+  
+  
     mat-label, mat-error {
         margin: 0;
     }
-}
-
-button {
+  }
+  
+  button {
     width: 100%;
-    color: rgb(82, 158, 106);
-}
-
-.button {
+    color:  rgb(122,202,147);
+  }
+  
+  .button {
     padding: 1rem 1.5rem;
     display: inline;
     background-color: rgb(122,202,147);
@@ -56,20 +71,23 @@ button {
     transition: box-shadow 0.4s;
     border: none;
     text-decoration: none;
-}
-
-.button:hover {
+    cursor: pointer;
+  }
+  
+  .button:hover {
     box-shadow: 0 6px 32px 0 rgb(122,202,147);
-}
-
-mat-card-actions {
-  display: flex;
+  }
+  
+  
+  mat-card-actions {
+    display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     p{
         a{
-          margin-left: 5px;
+           margin-left: 5px;
             text-decoration: none;
-            color:  rgb(82, 158, 106);
+            color:  rgb(122,202,147);
             font-weight: 500;
         }
   
@@ -78,26 +96,25 @@ mat-card-actions {
         }
     }
   }
-
-@media screen and (max-width: 500px) {
-
+   
+  @media screen and (max-width: 500px) {
     mat-card-title {
-        font-size: 20px;
+      font-size: 20px;
     }
-
-    mat-form-field {
-        margin-bottom: 10px;
-    }
-}
-
-.error-snackbar {
-    background-color: #f44336;
-}
-
-@media screen and (min-width:1150px){
-
+  
+      mat-form-field {
+          margin-bottom: 10px;
+      }
+  }
+  
+  error-snackbar {
+      background-color: #f44336;
+  }
+  
+  @media screen and (min-width:1150px){
+  
     mat-card {
         max-width: 500px;
     }
-
-}
+  
+  }

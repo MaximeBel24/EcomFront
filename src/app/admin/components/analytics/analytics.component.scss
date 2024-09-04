@@ -1,24 +1,42 @@
-.analytics-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.container {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: 100vh;
+    background-image: url(../../../../assets/images/analytics.jpg);
 }
 
-.analytics-card {
-    width: 40%;
+/* Order Status Styles */
+.order-status-container {
+    padding-top: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-status-card {
+    width: 32%;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
+    background-color: rgba(185, 158, 123, 255);
+    border: 7px solid rgb(122,202,147);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    margin-right: 20px;
 }
 
-.analytics-card:hover {
+.order-status-card:last-child {
+    margin-right: 0;
+}
+
+.order-status-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 16px 32px rgb(122,202,147);
 }
 
-.metric-avatar {
-    background-color: #007bff;
-    color: #fff;
+.status-avatar {
+    background-color: rgb(122,202,147);
+    color: rgb(80,58,48);
     font-size: 32px;
     border-radius: 50%;
     width: 60px;
@@ -31,18 +49,54 @@
 .mat-card-title {
     font-weight: bold;
     font-size: 20px;
-    color: #333;
+    color: rgb(34, 49, 63);
 }
 
-.metric-value {
+.status-value {
     font-size: 36px;
-    color: #007bff;
+    color: rgb(80,58,48);
     font-weight: bold;
     margin-top: 20px;
 }
 
-mat-card-title{
-    margin-top: 15px;
+/* Analytics Styles */
+.analytics-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.analytics-card {
+    width: 40%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    background-color: rgba(185, 158, 123, 255);
+    border: 7px solid rgb(122,202,147);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.analytics-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgb(122,202,147);
+}
+
+.metric-avatar {
+    background-color: rgb(122,202,147);
+    color: rgb(80,58,48);
+    font-size: 32px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.metric-value {
+    font-size: 36px;
+    color: rgb(80,58,48);
+    font-weight: bold;
+    margin-top: 20px;
 }
 
 .metric-subtext {
@@ -52,6 +106,8 @@ mat-card-title{
 }
 
 .previous-month {
-    background-color: #f5f5f5;
+    background-color: rgba(185, 158, 123, 0.8);
     margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
 }

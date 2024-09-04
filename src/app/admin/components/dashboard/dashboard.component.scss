@@ -1,114 +1,103 @@
-.search-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-
-  .search-input{
-    width: 500px;
-    margin-right: 15px;
-    border-radius: 8px;
-
-    input::placeholder {
-      color: white;
-    }
-
-    button {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      bottom: 0;
-    transform: translateY(-50%);
-    }
-  }
-}
-
-.product-list{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    // background-color: #f8f8f8;
-    min-height: 55vh;
-    padding: 40px;
-
-    .product-card {
-        width: calc(33.333% - 20px);
-        margin-bottom: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-
-        .product-image {
-            height: 300px;
-            border-radius: 10px 10px 0 0;
-            overflow: hidden;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-
-        .product-details {
-            padding: 20px;
-
-            .product-name{
-                font-size: 20px;
-                font-weight: bold;
-                color: #108ee9;
-                margin-bottom: 10px;
-            }
-
-            .product-description {
-                margin-bottom: 10px;
-            }
-
-            .product-info{
-                display: flex;
-                flex-wrap: wrap;
-                margin-bottom: 10px;
-
-                .info-row{
-                    flex: 0 0 50%;
-                    display: flex;
-                    align-items: center;
-                    margin-top: 10px;
-                    margin-bottom: 4px;
-
-                    .info-label {
-                        font-weight: bold;
-                        margin-right: 5px;
-                    }
-
-                    .info-value {
-                        font-weight: bold;
-                    }
-                }
-            }
-
-            .actions {
-                display: flex;
-                justify-content: flex-end;
-                margin-top: 10px;
-
-                .update-button {
-                    margin-right: 10px;
-                }
-            }
-        }
-    }
-}
-
-.empty-cart {
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    padding: 20px;
+    background-image: url(../../../../assets/images/admin.jpg);
+    min-height: 100vh;
+}
 
-    span {
-        font-size: 18px;
-        color: #616161;
-        margin-top: 10px;
+.search-form {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+mat-card {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(185, 158, 123, 255);
+    border: 7px solid rgb(122,202,147);
+
+    @media screen and (max-width: 500px) {
+        max-width: 90%;
     }
+
+    @media screen and (min-width: 1150px) {
+        max-width: 800px;
+    }
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 16px 32px rgb(122,202,147);
+    }
+}
+
+mat-card-content {
+    padding: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+}
+
+th {
+    background-color: rgb(122,202,147);
+    color: rgb(80,58,48);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+td {
+    background-color: rgba(185, 158, 123, 255);
+    color: rgb(80,58,48);
+}
+
+tr:nth-child(even) td {
+    background-color: rgba(185, 158, 123, 0.8);
+}
+
+tr:hover td {
+    background-color: rgb(122,202,147);
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.mat-elevation-z8 {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    text-decoration: none;
+    color: rgb(80,58,48);
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    i {
+        font-size: 20px;
+    }
+
+    .ri-question-line:hover{
+        color: rgb(122,0,122);
+    }
+
+    .ri-edit-2-fill:hover{
+        color: rgb(0,122,255);
+    }
+
+    .ri-delete-bin-fill:hover{
+        color: rgb(193,62,62);
+    }
+
+    
 }

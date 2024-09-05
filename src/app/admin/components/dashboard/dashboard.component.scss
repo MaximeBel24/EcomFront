@@ -1,11 +1,34 @@
 .container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-image: url(../../../../assets/images/admin.jpg);
     min-height: 100vh;
+    border-bottom: 15px solid rgb(122, 202, 147);
+    box-shadow: 0 13px 8px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+
+}
+
+.product-container {
+    background-image: url(../../../../assets/images/admin.jpg);
+}
+
+.user-container {
+    background-image: url(../../../../assets/images/user.jpg);
+}
+
+.category-container {
+    background-image: url(../../../../assets/images/categories.jpg);
+}
+.coupons-container {
+    background-image: url(../../../../assets/images/coupon.jpg);
+}
+
+.order-container {
+    background-image: url(../../../../assets/images/order.jpg);
 }
 
 .search-form {
@@ -15,12 +38,12 @@
 }
 
 mat-card {
-    max-width: 800px;
+    max-width: 1200px;
     width: 100%;
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: rgba(185, 158, 123, 255);
-    border: 7px solid rgb(122,202,147);
+    border: 7px solid rgb(122, 202, 147);
 
     @media screen and (max-width: 500px) {
         max-width: 90%;
@@ -32,8 +55,17 @@ mat-card {
 
     &:hover {
         transform: translateY(-10px);
-        box-shadow: 0 16px 32px rgb(122,202,147);
+        box-shadow: 0 16px 32px rgb(122, 202, 147);
     }
+}
+
+mat-card-title {
+    font-size: 34px;
+    font-weight: 700;
+    color: rgb(80, 58, 48);
+    font-family: "Dancing Script", cursive;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 mat-card-content {
@@ -48,18 +80,17 @@ table {
 th, td {
     padding: 16px;
     text-align: left;
+    color: rgb(80, 58, 48);
 }
 
 th {
-    background-color: rgb(122,202,147);
-    color: rgb(80,58,48);
+    background-color: rgb(122, 202, 147);
     font-weight: 600;
     text-transform: uppercase;
 }
 
 td {
     background-color: rgba(185, 158, 123, 255);
-    color: rgb(80,58,48);
 }
 
 tr:nth-child(even) td {
@@ -67,7 +98,7 @@ tr:nth-child(even) td {
 }
 
 tr:hover td {
-    background-color: rgb(122,202,147);
+    background-color: rgb(122, 202, 147);
     color: white;
     transition: background-color 0.3s ease;
 }
@@ -78,26 +109,40 @@ tr:hover td {
 
 a {
     text-decoration: none;
-    color: rgb(80,58,48);
+    color: rgb(80, 58, 48);
     margin-right: 10px;
     cursor: pointer;
     transition: color 0.3s ease;
+}
 
-    i {
-        font-size: 20px;
-    }
+a i {
+    font-size: 20px;
+}
 
-    .ri-question-line:hover{
-        color: rgb(122,0,122);
-    }
+a .ri-question-line:hover {
+    color: rgb(122, 0, 122);
+}
 
-    .ri-edit-2-fill:hover{
-        color: rgb(0,122,255);
-    }
+a .ri-edit-2-fill:hover {
+    color: rgb(0, 122, 255);
+}
 
-    .ri-delete-bin-fill:hover{
-        color: rgb(193,62,62);
-    }
+a .ri-delete-bin-fill:hover {
+    color: rgb(193, 62, 62);
+}
 
-    
+.button {
+    padding: 1rem 1.5rem;
+    display: inline-block;
+    background-color: rgb(122, 202, 147);
+    color: rgb(80, 58, 48);
+    font-weight: 600;
+    transition: background-color 0.5s;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgba(185, 158, 123, 0.8);
 }

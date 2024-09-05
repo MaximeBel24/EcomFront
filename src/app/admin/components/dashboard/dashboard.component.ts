@@ -13,7 +13,11 @@ import { of } from 'rxjs';
 export class DashboardComponent implements OnInit {
 
   products: any[] = [];
-  searchProductForm!: FormGroup;
+  coupons: any;
+  orders: any;
+  users: any;
+  categories: any;
+  
 
   constructor(
     private adminService: AdminService,
@@ -23,10 +27,11 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.getAllProducts();
-    this.searchProductForm = this.fb.group({
-      title: [null, [Validators.required]]
-    });
+    this.getCoupons();
+    this.getPlacedOrders();
   }
+
+  // PRODUCTS
 
   getAllProducts() {
     this.adminService.getAllProducts().subscribe(res => {
@@ -57,5 +62,67 @@ export class DashboardComponent implements OnInit {
         });
       }
     });
+  }
+
+  // CATEGORIES
+
+  getAllCategories(): void {
+    this.adminService.getAllCategories().subscribe(res => {
+      this.categories = res;
+    });
+  }
+
+  // COUPONS
+
+  getCoupons(){
+    this.adminService.getCoupons().subscribe(res =>{
+      this.coupons = res;
+    })
+  }
+
+  deleteCoupon(couponId: any){
+    this.adminService.deleteCoupon(couponId).pipe(
+      catchError(error => {
+        console.error('Error deleting coupon:', error);
+        return of(null);
+      })
+    ).subscribe(res => {
+      if (res === null || (res && res.body === null)) {
+        this.snackBar.open('Coupon supprimé avec succès', 'Fermer', {
+          duration: 5000,
+        });
+        this.getCoupons();
+      } else {
+        this.snackBar.open('Erreur lors de la suppression du coupon', 'Fermer', {
+          duration: 5000,
+          panelClass: 'error-snackbar'
+        });
+      }
+    });
+  }
+
+  // ORDERS
+
+
+  getPlacedOrders(){
+    this.adminService.getPlacedOrders().subscribe(res => {
+      this.orders = res;
+    })
+  }
+
+  changeOrderStatus(orderId: number, status: string){
+    this.adminService.changeOrderStatus(orderId, status).subscribe(res => {
+      if(res.id != null){
+        this.snackBar.open('Statut de la commande modifié avec succès', 'Fermer', {
+          duration: 5000
+        });
+        this.getPlacedOrders();
+      } else {
+        this.snackBar.open('Erreur lors de la modification du statut de la commande', 'Fermer', {
+          duration: 5000,
+          panelClass: 'error-snackbar'
+        });
+      }
+    })
   }
 }

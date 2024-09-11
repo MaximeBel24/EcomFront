@@ -17,14 +17,14 @@ export class AuthService {
   ) { }
 
   register(signupRequest:any): Observable<any> {
-    return this.http.post(BASIC_URL+"sign-up", signupRequest)
+    return this.http.post(BASIC_URL+"auth/sign-up", signupRequest)
   }
 
   login(username:string, password:string): Observable<boolean> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     const body = {username, password};
 
-    return this.http.post(BASIC_URL+"login", body, {headers, observe: 'response'}).pipe(
+    return this.http.post(BASIC_URL+"auth/login", body, {headers, observe: 'response'}).pipe(
       map((res) => {
         const authorizationHeader = res.headers.get('Authorization');
         const token = authorizationHeader ? authorizationHeader.substring(7) : null;
@@ -39,7 +39,4 @@ export class AuthService {
     );
   }
 
-  getOrderByTrackingId(trackingId: number): Observable<any> {
-    return this.http.get(BASIC_URL + `order/${trackingId}`);
-  }
 }

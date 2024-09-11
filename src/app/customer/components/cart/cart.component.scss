@@ -1,8 +1,8 @@
 .container {
     margin: 0 auto;
     padding: 20px;
-    background-image: url(../../../../assets/images/cart.jpg);
-    min-height: 70vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(../../../../assets/images/cart.jpg);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -139,6 +139,7 @@ form {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 40px;
 
     mat-form-field {
         margin-bottom: 20px;

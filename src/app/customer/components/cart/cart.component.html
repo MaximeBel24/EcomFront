@@ -21,10 +21,12 @@
                                 <span class="quantity">
                                     Quantité : {{ item.quantity }}
                                 </span>
+
                                 <button mat-icon-button (click)="increaseQuantity(item.productId)">
                                     <mat-icon>add_circle_outline</mat-icon>
                                 </button>
                             </div>
+                            <a (click)="deleteFromCart(item.id)"><i class="ri-delete-bin-fill"></i></a>
                         </div>
                     </div>
     
@@ -42,12 +44,12 @@
             <div class="total-price">
                 Montant final: {{ order.amount }}€
             </div> 
-     
+            
             <div>
                 <button mat-raised-button color="primary" (click)="placeOrder()">Passer commande</button>
             </div>
         </div>
-        <div class="container" *ngIf="order.couponName == null">
+        <div *ngIf="order.couponName == null">
             <form [formGroup]="couponForm" (ngSubmit)="applyCoupon()">
                 <mat-form-field appearance="outline" class="form-field">
                     <mat-label>Code de réduction</mat-label>

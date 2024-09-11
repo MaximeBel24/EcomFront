@@ -7,12 +7,24 @@
     box-sizing: border-box;
 }
 
+:root {
+    
+    --primary-background-color: #283618;
+    --secondary-background-color: #bc6c25;
+    --primary-text-color: #dda15e;
+    --secondary-text-color: #606c38;
+    --text-color: #FEFAE0;
+    --primary-hover-color: #f79a4f;
+    --secondary-hover-color: #4b5724;
+}
+
 html, body {
     height: 100%; 
 }
 
 body {
     margin: 0; 
+    color: var(--text-color);
     font-family: Roboto, "Helvetica Neue", sans-serif; 
-    background-color: rgba(185, 158, 123, 255);
+    background-color: var(--secondary-background-color);
 }

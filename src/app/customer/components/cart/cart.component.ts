@@ -45,6 +45,13 @@ export class CartComponent {
     })
   } 
 
+  deleteFromCart(cartItemId: any){
+    this.customerService.deleteFromCart(cartItemId).subscribe(res => {
+      this.snackbar.open("Produit supprimé du panier avec succès", "Fermer", {duration: 5000});
+      this.getCart();
+    })
+  }
+
   getCart(){
     this.cartItems = [];
     this.customerService.getCartByUserId().subscribe(res => {

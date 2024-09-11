@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url(../../assets/images/home.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../assets/images/home.jpg);
 }
 
 mat-card {
@@ -11,8 +11,8 @@ mat-card {
   width: 100%;
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: rgba(185, 158, 123, 255);
-  border: 7px solid rgb(122,202,147);
+  background-color: var(--secondary-background-color);
+  border: 7px solid var(--secondary-text-color);
 
   @media screen and (max-width: 500px) {
     max-width: 90%;
@@ -24,13 +24,13 @@ mat-card {
 
   &:hover {
     transform: translateY(-10px); 
-    box-shadow: 0 16px 32px rgb(122,202,147);
+    box-shadow: 0 16px 32px var(--secondary-hover-color);
     
   }
 }
 
 mat-card-title {
-  color:  rgb(34, 49, 63);
+  color:  var(--text-color);
   font-weight: 700;
   text-align: center;
   font-size: 2.2rem;
@@ -49,7 +49,11 @@ mat-form-field {
   width: 100%;
   margin-bottom: 20px;
   border-radius: 4px;
-  background-color: rgba(185, 158, 123, 255);
+  color: var(--text-color);
+  mat-label {
+    color: var(--text-color);
+  }
+
 
 
   mat-label, mat-error {
@@ -59,14 +63,14 @@ mat-form-field {
 
 button {
   width: 100%;
-  color:  rgb(122,202,147);
+  color:  var(--primary-background-color);
 }
 
 .button {
   padding: 1rem 1.5rem;
   display: inline;
-  background-color: rgb(122,202,147);
-  color: rgb(80,58,48);
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
   font-weight: 600;
   transition: box-shadow 0.4s;
   border: none;
@@ -75,7 +79,7 @@ button {
 }
 
 .button:hover {
-  box-shadow: 0 6px 32px 0 rgb(122,202,147);
+  box-shadow: 0 6px 32px 0 var(--secondary-hover-color);
 }
 
 
@@ -87,7 +91,7 @@ mat-card-actions {
       a{
          margin-left: 5px;
           text-decoration: none;
-          color:  rgb(122,202,147);
+          color:  var(--primary-background-color);
           font-weight: 500;
       }
 

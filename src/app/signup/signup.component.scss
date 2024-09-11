@@ -1,120 +1,124 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url(../../assets/images/home.jpg);
-  }
-  
-  mat-card {
-    max-width: 400px;
-    width: 100%;
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: rgba(185, 158, 123, 255);
-    border: 7px solid rgb(122,202,147);
-  
-    @media screen and (max-width: 500px) {
-      max-width: 90%;
-    }
-  
-    @media screen and (min-width: 1150px) {
-      max-width: 500px;
-    }
-  
-    &:hover {
-      transform: translateY(-10px); 
-      box-shadow: 0 16px 32px rgb(122,202,147);
-      
-    }
-  }
-  
-  mat-card-title {
-    color:  rgb(34, 49, 63);
-    font-weight: 700;
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    font-family: "Dancing Script", cursive;
-  
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  mat-form-field {
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    background-color: rgba(185, 158, 123, 255);
-  
-  
-    mat-label, mat-error {
-        margin: 0;
-    }
-  }
-  
-  button {
-    width: 100%;
-    color:  rgb(122,202,147);
-  }
-  
-  .button {
-    padding: 1rem 1.5rem;
-    display: inline;
-    background-color: rgb(122,202,147);
-    color: rgb(80,58,48);
-    font-weight: 600;
-    transition: box-shadow 0.4s;
-    border: none;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    box-shadow: 0 6px 32px 0 rgb(122,202,147);
-  }
-  
-  
-  mat-card-actions {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    p{
-        a{
-           margin-left: 5px;
-            text-decoration: none;
-            color:  rgb(122,202,147);
-            font-weight: 500;
-        }
-  
-        a:hover{
-            text-decoration: underline;
-        }
-    }
-  }
-   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../assets/images/home.jpg);
+}
+
+mat-card {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--secondary-background-color);
+  border: 7px solid var(--secondary-text-color);
+
   @media screen and (max-width: 500px) {
-    mat-card-title {
-      font-size: 20px;
-    }
-  
-      mat-form-field {
-          margin-bottom: 10px;
+    max-width: 90%;
+  }
+
+  @media screen and (min-width: 1150px) {
+    max-width: 500px;
+  }
+
+  &:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 16px 32px var(--secondary-hover-color);
+    
+  }
+}
+
+mat-card-title {
+  color:  var(--text-color);
+  font-weight: 700;
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-family: "Dancing Script", cursive;
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  color: var(--text-color);
+  mat-label {
+    color: var(--text-color);
+  }
+
+
+
+  mat-label, mat-error {
+      margin: 0;
+  }
+}
+
+button {
+  width: 100%;
+  color:  var(--primary-background-color);
+}
+
+.button {
+  padding: 1rem 1.5rem;
+  display: inline;
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  font-weight: 600;
+  transition: box-shadow 0.4s;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  box-shadow: 0 6px 32px 0 var(--secondary-hover-color);
+}
+
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  p{
+      a{
+         margin-left: 5px;
+          text-decoration: none;
+          color:  var(--primary-background-color);
+          font-weight: 500;
+      }
+
+      a:hover{
+          text-decoration: underline;
       }
   }
-  
-  error-snackbar {
-      background-color: #f44336;
+}
+ 
+@media screen and (max-width: 500px) {
+  mat-card-title {
+    font-size: 20px;
   }
-  
-  @media screen and (min-width:1150px){
-  
-    mat-card {
-        max-width: 500px;
+
+    mat-form-field {
+        margin-bottom: 10px;
     }
-  
+}
+
+error-snackbar {
+    background-color: #f44336;
+}
+
+@media screen and (min-width:1150px){
+
+  mat-card {
+      max-width: 500px;
   }
+
+}

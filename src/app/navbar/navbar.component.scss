@@ -6,7 +6,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 80px;
-    background-color: rgba(122,202,147);
+    background-color: var(--primary-background-color);
     box-shadow: 0 13px 8px rgba(0, 0, 0, 0.1);
     z-index: 999;
 
@@ -26,16 +26,17 @@
 
         a {
             font-family: "Dancing Script", cursive;
-            color: rgb(80,58,48);
+            color: var(--primary-text-color);
             text-decoration: none;
             font-weight: 700;
             font-size: 2rem;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: var(--primary-hover-color);
+            }
         }
 
-        a:hover {
-            color: rgb(44, 32, 26);
-            text-decoration: underline;
-        }
     }
 
     ul{
@@ -47,14 +48,15 @@
             margin: 0 8px;
             font-size: 16px;
             font-weight: 500;
-            color: rgb(80,58,48);
+            color: var(--primary-text-color);
             text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: var(--primary-hover-color);
+            }
         }
 
-        a:hover {
-            color: rgb(44, 32, 26);
-            text-decoration: underline;
-        }
     }
 
 
